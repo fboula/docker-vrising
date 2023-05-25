@@ -2,8 +2,7 @@ name: docker-build
 
 on:
   push:
-    paths:
-      - Dockerfile
+    branches: [ "main" ]
 
 jobs:
   buildx:
