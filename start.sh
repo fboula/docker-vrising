@@ -7,7 +7,7 @@ ln -snf /usr/share/zoneinfo/$TZ /etc/localtime 2>&1
 dpkg-reconfigure -f noninteractive tzdata 2>&1
 if [ ! -z $UID ]; then
 	usermod -u $UID docker 2>&1
-fi 
+fi
 if [ ! -z $GID ]; then
 	groupmod -g $GID docker 2>&1
 fi
@@ -30,7 +30,7 @@ chmod -R 777 /root/.steam 2>/dev/null
 echo " "
 echo "Updating V-Rising Dedicated Server files..."
 echo " "
-/usr/bin/steamcmd +force_install_dir "$s" +login anonymous +app_update 1829350 +quit
+/usr/bin/steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir "$s" +login anonymous +app_update 1829350 +quit
 echo "steam_appid: "`cat $s/steam_appid.txt`
 echo " "
 mkdir "$p/Settings" 2>/dev/null
